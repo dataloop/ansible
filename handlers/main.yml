@@ -1,3 +1,4 @@
 ---
 - name: restart dataloop-agent
+  sudo: true
   service: name=dataloop-agent enabled=yes state=restarted
