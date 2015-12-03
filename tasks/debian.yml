@@ -5,10 +5,13 @@
 
 # Add an Apt signing key, will not download if present
 - name: Add dataloop gpg key
+  sudo: true
   apt_key: id=113E2B8D url='https://download.dataloop.io/pubkey.gpg' state=present
 
 - name: Add dataloop apt repository
+  sudo: true
   apt_repository: repo='deb https://download.dataloop.io/deb/ stable main' state=present
 
 - name: Install dataloop
+  sudo: true
   apt: name=dataloop-agent state=present
